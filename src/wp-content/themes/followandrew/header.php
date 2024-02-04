@@ -22,12 +22,10 @@
 		</a>
 
 		<nav class="navbar navbar-expand-lg navbar-dark">
-
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
 				aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-
 			<div id="navigation" class="collapse navbar-collapse flex-column">
 				<?php
 					if (function_exists('the_custom_logo')) {
@@ -36,28 +34,21 @@
 					}
 				?>
 				<img class="mb-3 mx-auto logo" src="<?php echo $logo[0] ?>" alt="logo">
-
 				<?php
 					wp_nav_menu(
 						[
 							'menu' => 'primary',
 							'container' => '',
 							'theme_location' => 'primary',
-							'items_wrap' => '<ul id="" 
+							'items_wrap' => '<ul id=""
 								class="navbar-nav flex-column text-sm-center text-md-left">%3$s</ul>'
 						]
 					)
 				?>
-
 				<hr>
-				<ul class="social-list list-inline py-3 mx-auto">
-					<li class="list-inline-item"><a href="#"><i class="fab fa-twitter fa-fw"></i></a></li>
-					<li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in fa-fw"></i></a></li>
-					<li class="list-inline-item"><a href="#"><i class="fab fa-github-alt fa-fw"></i></a></li>
-					<li class="list-inline-item"><a href="#"><i class="fab fa-stack-overflow fa-fw"></i></a></li>
-					<li class="list-inline-item"><a href="#"><i class="fab fa-codepen fa-fw"></i></a></li>
-				</ul>
-
+				<?php
+					dynamic_sidebar('sidebar-1');
+				?>
 			</div>
 		</nav>
 	</header>
